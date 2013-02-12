@@ -1,0 +1,34 @@
+app:
+Put resources into Bootstrap.php
+Move pagecache.php into lib
+Move cache.ini into config
+
+//MAYBE ADD->Views pull custom HTML with ajax
+
+gear:
+#gearmand -d
+#sudo /etc/init.d/gearman-job-server restart
+#sudo /etc/init.d/memcached restart       
+#php sudo php gear/reverse_worker.php
+
+====
+Admin:
+1) start gearman
+2) start gearman worker
+
+User:
+1) Hits site, normal page cache
+key => 'guest:home'
+2) login
+key => 'guest:login'
+3) posted...load home
+spider cache kicks off process...cache all required links...for user
+4) user clicks next page....from cache
+spider cache returns page and kicks off process again 
+even if loads page from cache kick off process again
+
+//MAYBE->caches pages for ALL people....'guest' and 'loggedin' as keys...ajax required HTML
+
+
+
+
