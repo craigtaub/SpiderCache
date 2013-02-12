@@ -163,7 +163,7 @@ $reflecRequestProp->setValue($reflecRequest, 'newUri');
             $mydata = serialize($mydata);
 
 
-            //run this in parallel to rest of fno code (unlike doTask())
+            //run this in parallel to rest of code (unlike doTask())
             $task= $gmc->doBackground("spider", $mydata); 
 
             # run the tasks in parallel (assuming multiple workers)
@@ -190,7 +190,7 @@ $reflecRequestProp->setValue($reflecRequest, 'newUri');
 
 
     /**
-     * Page Caching for FNO.
+     * Page Caching.
      * if on homepage on ipad, check if has required cookie and if not, dont use page cache
      * NO ipad-homepage without the required cookie will ever be cached.
      *
@@ -208,7 +208,7 @@ $reflecRequestProp->setValue($reflecRequest, 'newUri');
             return;
         } else {
 
-            $ipadUserAgent = new Fno_My_UserAgent_Ipad();
+            $ipadUserAgent = new My_UserAgent_Ipad();
             $request = Zend_Controller_Front::getInstance()->getRequest();
             Zend_Controller_Front::getInstance()->getRouter()->route($request);
             $currentRoute = $request->getActionName();
